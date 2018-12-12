@@ -1,6 +1,18 @@
-# Deploy Descriptor samples
+# Deploy Descriptor examples
+
+This page contains samples of Control-M Automation API **Deploy Descriptors**.
+
+For more examples
 
 For any of these sample integrations to work, the **Control-M Automation Command Line Interface (CLI)** must be installed on the same computer as the IDE tool or code/text editor, and configured for the required Control-M endpoint(s). For more details, please check the [Control-M Automation API Installation](https://docs.bmc.com/docs/display/public/workloadautomation/Control-M+Automation+API+-+Installation) documentation and look for "*Installing the Control-M Automation CLI*".
+
+https://docs.bmc.com/docs/display/public/workloadautomation/Control-M+Automation+API+-+Code+Reference
+
+
+ctm deploy <definitionsFile> [deployDescriptorFile]
+   
+   ctm deploy transform <definitionsFile> <deployDescriptorFile>
+
 
 
 Following lines need "jq" installed - https://stedolan.github.io/jq/
