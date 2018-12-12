@@ -1,25 +1,17 @@
 # Deploy Descriptor examples
 
-This page contains samples of Control-M Automation API **Deploy Descriptors**.
+Control-M Automation API enables you to use **Deploy Descriptor** to change job definition properties in JSON format before building, deploying, or running the JSON file. Using the Deploy Descriptor enables you to streamline your code across different environments (for example, between Development, Test or Production). Since each Control-M environment has different properties, the Deploy Descriptor enables you to programmatically manipulate them.
 
-For more examples
+This page contains several Deploy Descriptor examples. For more information, please check the [Control-M Automation API Code Reference] (https://docs.bmc.com/docs/display/public/workloadautomation/Control-M+Automation+API+-+Code+Reference), make sure you have your product version selected, and click on "*Deploy Descriptor*" on the left side of the page.
 
-For any of these sample integrations to work, the **Control-M Automation Command Line Interface (CLI)** must be installed on the same computer as the IDE tool or code/text editor, and configured for the required Control-M endpoint(s). For more details, please check the [Control-M Automation API Installation](https://docs.bmc.com/docs/display/public/workloadautomation/Control-M+Automation+API+-+Installation) documentation and look for "*Installing the Control-M Automation CLI*".
-
-https://docs.bmc.com/docs/display/public/workloadautomation/Control-M+Automation+API+-+Code+Reference
-
-
-ctm deploy <definitionsFile> [deployDescriptorFile]
-   
-   ctm deploy transform <definitionsFile> <deployDescriptorFile>
-
-
-
-Following lines need "jq" installed - https://stedolan.github.io/jq/
-To install on Linux 64b:
-wget -O jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
-chmod 755 ./jq
-mv ./jq /usr/bin
+You can use the following Automation API service to test how a Deploy Descriptor applies on a workflow without performing any action on the Control-M environment:
+```
+ctm deploy transform <definitionsFile> <deployDescriptorFile>
+```
+Once tested, you can build, deploy or run workflows on Control-M applying a Descriptor File - e.g. for the "*deploy*" operation:
+```
+ctm deploy <definitionsFile> [deployDescriptorFile]   
+```
 
 Here are additional examples of commands to invoke the Control-M Automation API. These have been created and configured for **Notepad++**, but could potentially be adapted for other IDE tools or code/text editors.
    
