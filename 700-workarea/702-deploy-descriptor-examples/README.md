@@ -8,7 +8,7 @@ You can use the following Automation API service to test how a Deploy Descriptor
 ```
 ctm deploy transform <definitionsFile> <deployDescriptorFile>
 ```
-Once tested, you can build, deploy or run workflows on Control-M applying a Deploy Descriptor - e.g. for the "*deploy*" operation:
+Once tested, you can build, deploy or run workflows on Control-M applying a Deploy Descriptor - e.g. for the "deploy" operation:
 ```
 ctm deploy <definitionsFile> [deployDescriptorFile]   
 ```
