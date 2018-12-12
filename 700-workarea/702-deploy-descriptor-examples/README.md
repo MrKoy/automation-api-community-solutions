@@ -14,7 +14,7 @@ To verify that the Deploy Descriptor is valid, you can use the "build" service:
 ctm build DeployDescriptor.json
 ```
 
-Once tested, you can build, deploy or run workflows on Control-M applying a Deploy Descriptor - e.g. for the "deploy" service:
+Once everything has been tested, you can build, deploy or run workflows on Control-M applying a Deploy Descriptor - e.g. for the "deploy" service:
 ```
 ctm deploy MyWorkflow.json DeployDescriptor.json   
 ```
