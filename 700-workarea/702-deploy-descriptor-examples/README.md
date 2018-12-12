@@ -21,7 +21,7 @@ ctm deploy <definitionsFile> [deployDescriptorFile]
 }
 ```
 
-### Assign Host depending on Application
+#### Assign Host depending on Application
 ```
 { "Property" : "Host",
   "Source"   : "Application",
