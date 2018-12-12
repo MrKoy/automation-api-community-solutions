@@ -6,11 +6,17 @@ This page contains several Deploy Descriptor examples. For more information, ple
 
 You can use the following Automation API service to test how a Deploy Descriptor applies on a workflow without performing any action on the Control-M environment:
 ```
-ctm deploy transform <definitionsFile> <deployDescriptorFile>
+ctm deploy transform MyWorkflow.json DeployDescriptor.json
 ```
-Once tested, you can build, deploy or run workflows on Control-M applying a Deploy Descriptor - e.g. for the "deploy" operation:
+
+To verify that the Deploy Descriptor is valid, you can use the "build" service:
 ```
-ctm deploy <definitionsFile> [deployDescriptorFile]   
+ctm build DeployDescriptor.json
+```
+
+Once tested, you can build, deploy or run workflows on Control-M applying a Deploy Descriptor - e.g. for the "deploy" service:
+```
+ctm deploy MyWorkflow.json DeployDescriptor.json   
 ```
 <br>
 
