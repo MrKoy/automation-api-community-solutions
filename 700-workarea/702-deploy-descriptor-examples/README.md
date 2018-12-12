@@ -12,25 +12,53 @@ Once tested, you can build, deploy or run workflows on Control-M applying a Depl
 ```
 ctm deploy <definitionsFile> [deployDescriptorFile]   
 ```
-
-Here are additional examples of commands to invoke the Control-M Automation API. These have been created and configured for **Notepad++**, but could potentially be adapted for other IDE tools or code/text editors.
-   
-To integrate them in Notepad++ you have two options:
-
-   1. Do it manually for each operation, following the instructions in [**Integration with Notepad++**](/601-integration-with-ides-and-code-editors/integration-with-notepad++.md). 
-   
-      * make sure the NppExec plugin is installed (as explained in [Integration with Notepad++](/601-integration-with-ides-and-code-editors/integration-with-notepad++.md)) and then close Notepad++
-      * unzip the file and copy (overwrite) the existing “contextMenu.xml” in your “%APPDATA%\Notepad++” folder
-      * copy the other two files to “%APPDATA%\Notepad++\plugins\config”
-
 <br>
 
-### Run workflow
+### Assign Control-M/Server
 ```
-NPP_CONSOLE 0
-set local TMP_FILE="$(CURRENT_DIRECTORY)\$(NAME_PART)_runid.tmp"
-cmd /c ctm run "$(FULL_CURRENT_PATH)" > $(TMP_FILE) 2>&1
-NPP_OPEN $(TMP_FILE)
-cmd /c del $(TMP_FILE)
+{ "Property" : "ControlmServer",
+  "Assign"   : "my_ctm_server"
+}
 ```
-* It will open a temp file containing the command output (which includes the **runId**)
+
+### Assign Host depending on Application
+```
+{ "Property" : "Host",
+  "Source"   : "Application",
+  "Replace"  : [ { "Test" : "test_server" },
+                 { "HHRR" : "hhrr_server" },
+                 { "Finance" : "finan_server" } ]
+}
+```
+
+### Change RunAs user when Application starts with "Test"
+```
+{ "Property" : "RunAs",
+  "Source"   : "Application",
+  "Replace"  : [ { "Test.*" : "myuser" } ]
+}
+```
+
+### Remove prefix "TST_" from Job name
+```
+{ "ApplyOn"  : { "Type" : "Job", "@" : ".*" },
+  "Property" : "@",
+  "Replace"  : [ { "TST_(.*)" : "$1" } ]
+}
+```
+
+### Remove prefix "PRE_" from Folder name
+```
+{ "ApplyOn"  : { "Type" : "Folder", "@" : ".*" },
+  "Property" : "@",
+  "Replace"  : [ { "PRE_(.*)" : "$1" } ]
+}
+```
+
+### Replace scripts path for production server
+```
+{ "ApplyOn"  : { "Type" : "Job:Script", "@" : ".*" },
+  "Property" : "@.FilePath",
+  "Assign"   : "/opt/bin/myapp01/scripts"
+}
+```
