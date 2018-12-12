@@ -2,7 +2,7 @@
 
 Control-M Automation API enables you to use **Deploy Descriptor** to change job definition properties in JSON format before building, deploying, or running the JSON file. Using the Deploy Descriptor enables you to streamline your code across different environments (for example, between Development, Test or Production). Since each Control-M environment has different properties, the Deploy Descriptor enables you to programmatically manipulate them.
 
-This page contains several Deploy Descriptor examples. For more information, please check the [Control-M Automation API Code Reference] (https://docs.bmc.com/docs/display/public/workloadautomation/Control-M+Automation+API+-+Code+Reference), make sure you have your product version selected, and click on "*Deploy Descriptor*" on the left side of the page.
+This page contains several Deploy Descriptor examples. For more information, please check the [Control-M Automation API Code Reference](https://docs.bmc.com/docs/display/public/workloadautomation/Control-M+Automation+API+-+Code+Reference), make sure you have your product version selected, and click on "*Deploy Descriptor*" on the left side of the page.
 
 You can use the following Automation API service to test how a Deploy Descriptor applies on a workflow without performing any action on the Control-M environment:
 ```
